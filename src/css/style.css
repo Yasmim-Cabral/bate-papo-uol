@@ -1,0 +1,176 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+/* --------Conteudo Header-------- */
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 22px 0 22px;
+    box-shadow: 0px 4px 6px 0px #0000000D;
+    background-color: #FFFFFF;
+}
+
+header img {
+    width: 75px;
+    height: 53px;
+}
+
+header ion-icon {
+    font-size: 45px;
+}
+
+/* --------Conteudo Main-------- */
+main {
+    height: calc(100vh - 160px);
+    margin: 80px 0;
+    padding: 20px 0 5px 0;
+    background-color: #f3f3f3;
+    font-size: 14px;
+    z-index: -1;
+    overflow-y: auto;
+}
+
+main span {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    padding: 10px;
+    line-height: 20px;
+}
+
+.mensagem-de-status {
+    background-color: #dcdcdc;
+}
+
+.mensagem-normal {
+    background-color: #FFFFFF;
+}
+
+.mensagem-reservada {
+    background-color: #ffdede;
+}
+
+p {
+    color: #aaaaaa;
+}
+
+.mensagem-de-status,
+.mensagem-normal,
+.mensagem-reservada {
+    display: flex;
+    gap: 5px;
+}
+
+/* --------Conteudo Footer-------- */
+footer {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 20px 20px 0 20px;
+    box-shadow: 0px -4px 6px 0px #0000000D;
+    background-color: #FFFFFF;
+}
+
+input {
+    width: 75vw;
+    border: none;
+    font-size: 18px;
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid #dcdcdc;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+    font-style: italic;
+}
+
+.destino-da-mensagem {
+    color: #505050;
+    padding-left: 2px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+footer ion-icon {
+    font-size: 35px;
+}
+
+/* --------Barra Lateral-------- */
+
+.menu-lateral {
+    height: 100vh;
+    width: 100vw;
+    background-color: #00000099;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fundo-menu {
+    width: 25vw;
+}
+
+.menu-opcoes {
+    width: 75vw;
+    background-color: #FFFFFF;
+}
+
+.menu-opcoes h1 {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 25px;
+    text-align: center;
+}
+
+.menu-opcoes li ion-icon {
+    font-size: 25px;
+    padding: 5px;
+}
+
+.menu-opcoes li {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.pessoas {
+    display: flex;
+    flex-direction: column;
+}
+
+.check-contato,
+.check-visibilidade {
+    display: none;
+}
+
+/* -------Class Add/Remove------- */
+
+.escondido {
+    display: none;
+}
+
+.contato-selecionado .check-contato,
+.visibilidade-selecionada .check-visibilidade {
+    display: block;
+    position: fixed;
+    color: #28BB25;
+    right: 15px;
+}
