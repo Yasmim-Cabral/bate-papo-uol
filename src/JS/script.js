@@ -140,50 +140,55 @@ function atualizarListaParticipantes(resposta) {
                 usuario.innerHTML += participanteSelecionado.outerHTML
             }
         })
-    } else {
-        resposta.data.forEach(participante => {
-            if (participante.name !== nomeParticipante.name) {
-                usuario.innerHTML +=
-                    `<li id="${participante.name}" onclick="selecionarContato(this)">
+        const todos = document.querySelector("#Todos");
+        const contatoSelecionado = document.querySelector(".contato-selecionado");
+        if (contatoSelecionado === null) {
+            todos.classList.add("contato-selecionado");
+            avisarDestinoDaMensagem();
+        }} else {
+            resposta.data.forEach(participante => {
+                if (participante.name !== nomeParticipante.name) {
+                    usuario.innerHTML +=
+                        `<li id="${participante.name}" onclick="selecionarContato(this)">
                     <ion-icon name="person-circle"></ion-icon>
                     ${participante.name}
                     <ion-icon class="check-contato" name="checkmark-sharp"></ion-icon>
                  </li>`
-            }
-        })
+                }
+            })
+        }
     }
-}
 
-function avisarDestinoDaMensagem() {
-    const contatoSelecionado = document.querySelector(".contato-selecionado");
-    const visibilidadeSelecionada = document.querySelector(".visibilidade-selecionada");
-    destinoMensagem.innerHTML = `Enviando para ${contatoSelecionado.id} (${visibilidadeSelecionada.id})`
-}
+    function avisarDestinoDaMensagem() {
+        const contatoSelecionado = document.querySelector(".contato-selecionado");
+        const visibilidadeSelecionada = document.querySelector(".visibilidade-selecionada");
+        destinoMensagem.innerHTML = `Enviando para ${contatoSelecionado.id} (${visibilidadeSelecionada.id})`
+    }
 
-function selecionarContato(contato) {
-    const contatoSelecionado = document.querySelector(".contato-selecionado");
-    contatoSelecionado.classList.remove("contato-selecionado");
-    contato.classList.add("contato-selecionado");
-    participanteSelecionado = document.querySelector(".usuario .contato-selecionado");
-    avisarDestinoDaMensagem()
-}
+    function selecionarContato(contato) {
+        const contatoSelecionado = document.querySelector(".contato-selecionado");
+        contatoSelecionado.classList.remove("contato-selecionado");
+        contato.classList.add("contato-selecionado");
+        participanteSelecionado = document.querySelector(".usuario .contato-selecionado");
+        avisarDestinoDaMensagem()
+    }
 
-function selecionarVisibilidade(visibilidade) {
-    const visibilidadeSelecionada = document.querySelector(".visibilidade-selecionada");
-    visibilidadeSelecionada.classList.remove("visibilidade-selecionada");
-    visibilidade.classList.add("visibilidade-selecionada");
-    avisarDestinoDaMensagem()
-}
+    function selecionarVisibilidade(visibilidade) {
+        const visibilidadeSelecionada = document.querySelector(".visibilidade-selecionada");
+        visibilidadeSelecionada.classList.remove("visibilidade-selecionada");
+        visibilidade.classList.add("visibilidade-selecionada");
+        avisarDestinoDaMensagem()
+    }
 
-function abrirMenu() {
-    menuLateral.classList.remove("escondido")
-}
+    function abrirMenu() {
+        menuLateral.classList.remove("escondido")
+    }
 
-function fecharMenu() {
-    menuLateral.classList.add("escondido")
-}
+    function fecharMenu() {
+        menuLateral.classList.add("escondido")
+    }
 
-function rolarParaBaixo() {
-    const ultimaMensagem = document.querySelector('.mensagem-contida:last-child');
-    ultimaMensagem.scrollIntoView({ behavior: 'smooth' });
-}
+    function rolarParaBaixo() {
+        const ultimaMensagem = document.querySelector('.mensagem-contida:last-child');
+        ultimaMensagem.scrollIntoView({ behavior: 'smooth' });
+    }
